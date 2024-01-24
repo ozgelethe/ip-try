@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address List</title>
+</head>
+<body>
+    <h1>IP Address List</h1>
+
+    <!-- Display IP addresses -->
+    <ul>
+        {% for ip_address in ip_addresses %}
+            <li>{{ ip_address.address }} - {{ ip_address.otx_info }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Link to add a new IP address -->
+    <a href="{% url 'ip-address-list-create' %}">Add a new IP address</a>
+</body>
+</html>

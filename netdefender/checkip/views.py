@@ -1,4 +1,3 @@
-# YourApp/views.py
 from rest_framework import generics
 from .models import IPAddress
 from .serializers import IPAddressSerializer
@@ -9,6 +8,7 @@ class IPAddressListCreateView(generics.ListCreateAPIView):
     # pylint: disable=E1101
     queryset = IPAddress.objects.all()
     serializer_class = IPAddressSerializer
+    template_name = 'checkip/ipaddress_list.html'  # Add this line
 
     def perform_create(self, serializer):
         ip_address = serializer.validated_data['address']

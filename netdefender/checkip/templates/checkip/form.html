@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add IP Address</title>
+</head>
+<body>
+    <h1>Add IP Address</h1>
+
+    <!-- Form to add a new IP address -->
+    <form method="post" action="{% url 'ip-address-list-create' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add IP Address</button>
+    </form>
+
+    <!-- Link back to the IP address list -->
+    <a href="{% url 'ip-address-list' %}">Back to IP Address List</a>
+</body>
+</html>
