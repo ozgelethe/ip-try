@@ -2,6 +2,7 @@ from rest_framework import generics
 from .models import IPAddress
 from .serializers import IPAddressSerializer
 import requests
+from rest_framework import generics
 
 class IPAddressListCreateView(generics.ListCreateAPIView):
     
